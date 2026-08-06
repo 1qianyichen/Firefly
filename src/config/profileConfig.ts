@@ -42,7 +42,7 @@ export const profileConfig: ProfileConfig = {
 		{
   			name: "Bilibili",
   			icon: "fa7-brands:bilibili", // 使用这种格式
-  			url: "https://space.bilibili.com/你的UID",
+  			url: "https://space.bilibili.com/3691011010202252",
   			showName: false,
 		},
 	],
