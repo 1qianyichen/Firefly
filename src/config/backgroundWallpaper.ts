@@ -73,17 +73,17 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "すべてはシュタインズゲートの選択だ!",
 			// 主页横幅主标题字体大小
 			titleSize: "4.5rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"宇宙には始まりはあるが、終わりはない。―――無限。",
+				"星にもまた、始まりはあるが、自らの力をもって滅びていく。―――有限。",
+				"知恵を持つ者こそ、最も愚かである事は、歴史が証明している。",
+				"海に生ける魚は、陸上の世界を知らない。知っていればまた、それも英知である。",
+				"人間が神の領域を超えられるのは、一度のみ許された。",
+				"それは今だ。この瞬間のため、オレはこの最果ての地に立つ。",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",

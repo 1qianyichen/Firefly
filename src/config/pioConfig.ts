@@ -49,16 +49,7 @@ export const spineModelConfig: SpineModelConfig = {
 			"emoji_5",
 		],
 		// 点击时随机显示的文字消息
-		clickMessages: [
-			"你好呀！我是流萤~",
-			"今天也要加油哦！✨",
-			"想要一起去看星空吗？🌟",
-			"记得要好好休息呢~",
-			"有什么想对我说的吗？💫",
-			"让我们一起探索未知的世界吧！🚀",
-			"每一颗星星都有自己的故事~⭐",
-			"希望能带给你温暖和快乐！💖",
-		],
+		clickMessages: [],
 		// 文字显示时间（毫秒）
 		messageDisplayTime: 3000,
 		// 待机动画列表
@@ -157,14 +148,9 @@ export const live2dWidgetConfig: Live2DWidgetConfig = {
 		// 气泡开关
 		enable: true,
 		// 初始欢迎消息
-		welcomeMessage: ["你好呀！", "欢迎来到我的世界！"],
+		welcomeMessage: [],
 		// 循环提示内容
-		messages: [
-			"有什么需要帮助的吗？",
-			"今天天气真不错呢！",
-			"要不要一起玩游戏？",
-			"记得按时休息哦！",
-		],
+		messages: [],
 		// 文字显示时间（ms）
 		duration: 3000,
 		// 提示气泡切换间隔（ms）
