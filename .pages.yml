@@ -1,0 +1,142 @@
+# Pages CMS Configuration for Firefly Blog
+# Docs: https://pagescms.org/docs/
+
+media:
+  - name: posts-images
+    label: 文章配图
+    input: src/content/posts/images
+    output: ./images
+    extensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
+      - gif
+      - avif
+      - svg
+    categories: [image]
+    rename: safe
+  - name: posts-guide-images
+    label: 指南配图
+    input: src/content/posts/guide
+    output: .
+    extensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
+      - gif
+      - avif
+      - svg
+    categories: [image]
+    rename: safe
+
+content:
+  # ============================================
+  # Posts - 博客文章集合
+  # ============================================
+  - name: posts
+    label: 博客文章
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    filename: "{slug}.md"
+    subfolders: true
+    exclude:
+      - "**/images/**"
+    fields:
+      - { name: title, label: 文章标题, type: string, required: true }
+      - { name: slug, label: URL 标识, type: string, required: true, description: "文章的唯一 URL 标识，如 'my-first-post'" }
+      - { name: published, label: 发布日期, type: date, required: true }
+      - { name: updated, label: 更新日期, type: date }
+      - { name: draft, label: 草稿, type: boolean, default: false }
+      - { name: description, label: 文章摘要, type: text, description: "简短的文章描述，用于列表和 SEO" }
+      - name: image
+        label: 封面图
+        type: image
+        description: "支持网络URL、./相对路径，或填 'api' 自动生成 OG 图片"
+        options:
+          media: posts-images
+      - name: tags
+        label: 标签
+        type: list
+        options:
+          type: string
+      - { name: category, label: 分类, type: string }
+      - { name: lang, label: 语言, type: string, default: "", description: "语言代码，如 zh-CN" }
+      - { name: pinned, label: 置顶, type: boolean, default: false }
+      - { name: author, label: 作者, type: string }
+      - { name: sourceLink, label: 来源链接, type: string }
+      - { name: licenseName, label: 许可证名称, type: string }
+      - { name: licenseUrl, label: 许可证链接, type: string }
+      - { name: comment, label: 启用评论, type: boolean, default: true }
+      - { name: password, label: 文章密码, type: string, description: "设置密码后读者需输入密码才能查看文章" }
+      - { name: passwordHint, label: 密码提示, type: string }
+      - { name: body, label: 正文, type: rich-text }
+    view:
+      primary: title
+      sort: published
+      order: desc
+    operations:
+      create: true
+      rename: true
+      delete: true
+
+  # ============================================
+  # Dynamic - 说说/动态集合
+  # ============================================
+  - name: dynamic
+    label: 说说/动态
+    type: collection
+    path: src/content/dynamic
+    format: yaml-frontmatter
+    filename: "{published}-.md"
+    fields:
+      - { name: published, label: 发布时间, type: date, required: true, description: "格式: YYYY-MM-DD HH:mm:ss" }
+      - { name: pinned, label: 置顶, type: boolean, default: false }
+      - { name: location, label: 位置, type: string, description: "如 '广西'" }
+      - { name: body, label: 内容, type: rich-text }
+    view:
+      primary: published
+      sort: published
+      order: desc
+    operations:
+      create: true
+      rename: true
+      delete: true
+
+  # ============================================
+  # Spec - 特殊页面
+  # ============================================
+  - name: spec
+    label: 特殊页面
+    type: group
+    items:
+      - name: about
+        label: 关于我
+        type: file
+        path: src/content/spec/about.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: 页面标题, type: string, default: "关于我" }
+          - { name: body, label: 内容, type: rich-text }
+
+      - name: friends
+        label: 友情链接
+        type: file
+        path: src/content/spec/friends.mdx
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: 页面标题, type: string }
+          - { name: description, label: 页面描述, type: string }
+          - { name: body, label: 内容, type: rich-text, description: "MDX 格式内容，包含站点信息和友链列表" }
+
+      - name: guestbook
+        label: 留言板
+        type: file
+        path: src/content/spec/guestbook.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: 页面标题, type: string }
+          - { name: description, label: 页面描述, type: string }
+          - { name: body, label: 内容, type: rich-text }
