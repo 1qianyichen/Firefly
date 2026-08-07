@@ -67,8 +67,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			enable: true,
 			// 主页横幅主标题
 			title: "すべてはシュタインズゲートの選択だ!",
-			// 主页横幅主标题字体大小
-			titleSize: "4.5rem",
+		// 主页横幅主标题字体大小
+		titleSize: "3rem",
 			// 主页横幅副标题
 			subtitle: [
 				"宇宙には始まりはあるが、終わりはない。―――無限。",
@@ -78,8 +78,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 				"人間が神の領域を超えられるのは、一度のみ許された。",
 				"それは今だ。この瞬間のため、オレはこの最果ての地に立つ。",
 			],
-			// 主页横幅副标题字体大小
-			subtitleSize: "1.5rem",
+		// 主页横幅副标题字体大小
+		subtitleSize: "1.2rem",
 			typewriter: {
 				// 是否启用打字机效果
 				// 打字机开启 → 循环显示所有副标题
